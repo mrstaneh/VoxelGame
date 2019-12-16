@@ -16,4 +16,12 @@ MonoBehaviour:
   solidGroundHeight: 42
   terrainHeight: 42
   terrainScale: 0.15
-  lodes: []
+  lodes:
+  - enabled: 1
+    nodeName: Cave
+    blockId: 0
+    minHeight: 1
+    maxHeight: 255
+    scale: 0.08
+    threshold: 0.52
+    noiseOffset: 0

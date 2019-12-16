@@ -49,7 +49,7 @@ public class World : MonoBehaviour
         }
 
         /* BASIC TERRAIN PASS */
-        int terrainHeight = Mathf.FloorToInt(biome.terrainHeight * NoiseGenerator.Get2DPerlin(new Vector2(pos.x, pos.z), 0f, biome.terrainScale)) + biome.solidGroundHeight;
+        int terrainHeight = Mathf.FloorToInt(biome.terrainHeight * NoiseGenerator.Get2DPerlin(new Vector2(pos.x, pos.z), 0f, biome.terrainScale, seed)) + biome.solidGroundHeight;
         byte voxelValue = 0;
 
         if (yPos == terrainHeight)
@@ -73,9 +73,9 @@ public class World : MonoBehaviour
 
         foreach (Lode lode in biome.lodes) 
         {
-            if (yPos > lode.minHeight && yPos < lode.maxHeight) 
+            if (yPos > lode.minHeight && yPos < lode.maxHeight && lode.enabled) 
             {
-                if (NoiseGenerator.Get3DPerlin(pos, lode.noiseOffset, lode.scale, lode.threshold)) 
+                if (NoiseGenerator.Get3DPerlin(pos, lode.noiseOffset, lode.scale, lode.threshold, seed)) 
                 {
                     voxelValue = lode.blockId;
                 }
