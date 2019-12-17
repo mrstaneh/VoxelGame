@@ -13,15 +13,19 @@ MonoBehaviour:
   m_Name: DefaultBiome
   m_EditorClassIdentifier: 
   biomeName: Default
-  solidGroundHeight: 42
-  terrainHeight: 42
-  terrainScale: 0.15
+  solidGroundHeight: 0
+  terrainHeight: 128
+  terrainScale: 0.05
+  terrainIterations: 4
+  persistence: 2.2
   lodes:
   - enabled: 1
     nodeName: Cave
     blockId: 0
-    minHeight: 1
-    maxHeight: 255
-    scale: 0.08
-    threshold: 0.52
-    noiseOffset: 0
+    minHeight: 0
+    maxHeight: 64
+    scale: 0.02
+    threshold: 0.55
+    noiseOffset: 100
+    iterations: 16
+    persistence: 8

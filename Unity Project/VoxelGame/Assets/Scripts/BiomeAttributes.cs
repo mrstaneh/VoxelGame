@@ -10,6 +10,8 @@ public class BiomeAttributes : ScriptableObject
     public int solidGroundHeight;
     public int terrainHeight;
     public float terrainScale;
+    public int terrainIterations;
+    public float persistence;
 
     public Lode[] lodes;
 }
@@ -25,4 +27,6 @@ public class Lode
     public float scale;
     public float threshold;
     public float noiseOffset;
+    public int iterations;
+    public float persistence;
 }
